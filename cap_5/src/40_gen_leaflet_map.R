@@ -3,11 +3,11 @@
 library(tidyverse)
 library(sf)
 library(leaflet)
+library(leaflegend)
 
 # Cargo datos
 est_soc <- read_sf('../CONICET_estr_agr/proc_data/tablas_finales/frontera_depto.geojson') %>%
         mutate(cluster2 = case_when(
-                is.na(cluster2) ~ 'Sin dato',
                 cluster2 == "3-Alto desarrollo c/pequeña producción capitalista y mercantil simple"~ "3-Alto grado de desarrollo con pequeña producción capitalista y mercantil simple",
                 TRUE ~ cluster2)
                )
@@ -16,7 +16,7 @@ macro_estr <- est_soc %>%
         group_by(cluster2) %>%
         summarise()
 
-h3 <- read_sf('./cap5/data/proc/v2_estab_to_h3_pca_clust_depto.geojson') %>%
+h3 <- read_sf('./cap_5/data/proc/v2_estab_to_h3_pca_clust_depto.geojson') %>%
         select(h3, link, total:prop_ganaderia, hc_clst_7, cluster2)
 
 h3 <- h3 %>%
@@ -100,18 +100,18 @@ mapa <- leaflet() %>%
                   position = "bottomright",
                   pal = pal_macro, 
                   values = ~cluster2,
-                  title = "Macroestr.",
+                  title = "Macroestructuras",
                   opacity = 1) %>%
         addLayersControl(
                 baseGroups = c(
                         "Argenmap v2 (default)"
                 ),
                 overlayGroups = c("Macroestructuras", "Microestructuras"),
-                options = layersControlOptions(collapsed = FALSE)
+                options = layersControlOptions(collapsed = TRUE)
         )
 
 
-mapa 
+#mapa 
 
 htmlwidgets::saveWidget(mapa, file="03_microestructuras.html")
 
