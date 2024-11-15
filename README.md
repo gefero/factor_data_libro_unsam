@@ -1,7 +1,5 @@
-# ![CA]()
-# Repensar la cuestión agraria. Estrutura social del campo argentino
-> Germán Rosati
-> Adriana Chazarreta
+# Repensar la cuestión agraria. Estructura social del campo argentino
+> Germán Rosati y Adriana Chazarreta
 
 ## Repositorio de código
 Este repositorio contiene el código para la replicación de los gráficos, tablas
