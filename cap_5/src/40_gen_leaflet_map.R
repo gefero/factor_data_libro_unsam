@@ -8,10 +8,13 @@ library(leaflegend)
 # Cargo datos
 est_soc <- read_sf('../CONICET_estr_agr/proc_data/tablas_finales/frontera_depto.geojson') %>%
         mutate(cluster2 = case_when(
-                cluster2 == "3-Alto desarrollo c/pequeña producción capitalista y mercantil simple"~ "3-Alto grado de desarrollo con pequeña producción capitalista y mercantil simple",
+                cluster2 == "3. Alto desarrollo con pequeña producción capitalista y mercantil simple"~ "3-Alto grado de desarrollo con pequeña producción capitalista y mercantil simple",
                 TRUE ~ cluster2)
-               )
-        
+               ) %>%
+        mutate(cluster2 = str_replace(cluster2, "-", ". "))
+ 
+
+
 macro_estr <- est_soc %>%
         group_by(cluster2) %>%
         summarise()
