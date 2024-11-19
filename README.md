@@ -10,18 +10,18 @@ Cada carpeta corresponde a un capítulo del libro (aquellos que procesan y anali
 datos sobre la estructura agraria).
 
 ```
-├── cap_3
+├── [cap_3](https://github.com/gefero/factor_data_libro_unsam/tree/main/cap_3)
 │   └── data
 │   └── src
-├── cap4_ponencia_AASRU
+├── [cap4_ponencia_AASRU](https://github.com/gefero/factor_data_libro_unsam/tree/main/cap4_ponencia_AASRU)
 │   ├── data
 │   ├── plots
 │   └── src
-├── cap_5
+├── [cap_5](https://github.com/gefero/factor_data_libro_unsam/tree/main/cap_5)
 │   ├── data
 │   ├── plots
 │   └── src
-└── cap_6
+└── [cap_6](https://github.com/gefero/factor_data_libro_unsam/tree/main/cap_6)
     ├── data
     ├── plots
     └── src
